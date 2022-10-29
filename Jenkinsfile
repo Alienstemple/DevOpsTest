@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Hello World'
                 sh "ls -la"
-                ansiblePlaybook credentialsId: 'ubunru2_2', inventory: 'ansible/inventory/test-task/hosts.yml', playbook: 'ansible/nginx.yml'
+                ansiblePlaybook credentialsId: 'ubuntu2', inventory: 'ansible/inventory/test-task/hosts.yml', playbook: 'ansible/nginx.yml'
             }
         }
     }
