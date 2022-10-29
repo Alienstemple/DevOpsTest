@@ -1,2 +1,16 @@
 ---
 # handlers file for nginx
+
+- name: restart nginx
+  service:
+    name: "nginx"
+    state: restarted
+    enabled: yes
+    sleep: 5
+
+- name: restart php8.1-fpm
+  service:
+    name: "php8.1-fpm"
+    state: restarted
+    enabled: yes
+    sleep: 5
