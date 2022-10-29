@@ -21,6 +21,9 @@
   copy:
     src:  "{{ item.src }}"
     dest: "{{ item.dest }}"
+  notify:
+   - restart nginx
+   - php8.1-fpm
   loop:
     - src: nginx.conf
       dest: /nginx/nginx.conf
@@ -28,11 +31,11 @@
       dest: /etc/nginx/sites-enabled/default
     - src: index.php
       dest: /var/www/html/index.php
-
-- name: Nginx Restart
-  service:
-    name: "{{ item }}"
-    state: restarted
-  loop:
-    - nginx
-    - php8.1-fpm
+#
+#- name: Nginx Restart
+##  service:
+ #   name: "{{ item }}"
+#    state: restarted
+#  loop:
+#    - nginx
+#    - php8.1-fpm
