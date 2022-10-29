@@ -4,6 +4,7 @@ pipeline {
         stage('Hello') {
             steps {
                 echo 'Hello World'
+                ansiblePlaybook credentialsId: 'ubuntu2', inventory: 'ansible/inventory/test-task/hosts.yml', playbook: 'ansible/nginx.yml'
             }
         }
     }
