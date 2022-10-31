@@ -1,1 +1,1 @@
-<?php print("Hello from branch master");?>
+<?php print("Hello from branch another");?>
